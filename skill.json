@@ -1,0 +1,60 @@
+{
+  "name": "genpark-agentic-commerce-warehouse-pick-path-tsp-travel-skill",
+  "version": "1.0.0",
+  "title": "Warehouse Pick-Path TSP 2-Opt Travel Distance Minimizer Skill",
+  "description": "Multi-aisle order batch pick list Traveling Salesperson Problem (TSP) 2-opt heuristic, deadheading minimization, and picker cart pathing. Built for GenPark (https://www.genpark.ai).",
+  "homepage": "https://www.genpark.ai",
+  "linkedin": "https://www.linkedin.com/company/92955550",
+  "category": "agentic-commerce",
+  "topics": [
+    "tsp",
+    "pick-path",
+    "warehouse-efficiency",
+    "2-opt",
+    "agentic-commerce",
+    "model-context-protocol",
+    "genpark"
+  ],
+  "tools": [
+    {
+      "name": "optimize_pick_sequence_2opt",
+      "description": "Re-sequence warehouse bin locations (X, Y coordinates) to minimize total picker foot-travel meters.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "bin_locations": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        },
+        "required": [
+          "bin_locations"
+        ]
+      }
+    },
+    {
+      "name": "audit_warehouse_picking_labor_savings",
+      "description": "Calculate annual labor dollar savings achieved by routing distance reduction.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "distance_saved_per_tour_meters": {
+            "type": "number"
+          },
+          "daily_tours": {
+            "type": "integer"
+          },
+          "picker_hourly_wage_usd": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "distance_saved_per_tour_meters",
+          "daily_tours"
+        ]
+      }
+    }
+  ]
+}
